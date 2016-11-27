@@ -1,0 +1,26 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<stdio.h>
+int main()
+{
+    int i,j,k,t,num;
+    scanf("%d",&t);
+    for(i=1; i<=t; i++)
+    {
+        scanf("%d",&num);
+        if(num%3==0)
+        {
+            num=num-5;
+        }
+        while(num%3!=0)
+        {
+            num=num-5;
+        }
+        if(num>0)
+            printf("Case %d: %d\
+",i,num);
+        else
+            printf("Case %d: -1\
+",i);
+    }
+    return 0;
+}

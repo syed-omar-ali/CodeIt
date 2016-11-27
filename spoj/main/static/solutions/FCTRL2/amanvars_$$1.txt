@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+   int t,n,temp=0;
+   int i,j,k,z,m=0;
+   int arr[200],x;
+   int rem=0,nsize=1;
+   scanf("%d",&t);
+   for(i=0;i<t;i++){
+    scanf("%d",&n);
+    arr[0]=1; nsize=1;
+    for(j=2;j<=n;j++){
+        temp=0;
+            for(k=0;k<nsize;k++){
+        x=arr[k]*j + temp;
+        arr[k] = x%10;
+        temp = x/10;
+    }
+    while(temp){
+        arr[nsize] = temp%10;
+        temp/=10;
+        nsize++;
+    }
+    }
+     for(z=nsize-1;z>=0;z--){
+        printf("%d",arr[z]);
+    }
+    printf("\
+");
+   }
+
+    return 0;
+}

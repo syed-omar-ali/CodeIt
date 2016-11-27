@@ -1,0 +1,32 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    int g,b;
+    float diff,large,small;
+    while(1){
+        cin>>g>>b;
+        if(g==-1&&b==-1)
+            break;
+        if(g!=0&&b!=0)
+        {
+            g>b?(large=g,small=b):(large=b,small=g);
+            diff=(large/(small+1));
+            cout<<ceil(diff)<<endl;
+
+        }
+        else if(g==0&&b==0)
+            cout<<"0"<<endl;
+        else if(g==0)
+            cout<<b<<endl;
+        else
+            cout<<g<<endl;
+
+
+    }
+
+    return 0;
+}

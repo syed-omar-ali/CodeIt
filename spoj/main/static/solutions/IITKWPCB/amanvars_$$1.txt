@@ -1,0 +1,36 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,n,i,j;
+    sc(t);
+    while(t--)
+    {
+        sc(n);
+        i = floor(n/2);
+        if(n==1){
+            printf("0\
+");
+        }
+        else{
+        if(n%2 == 0){
+            if(i%2 != 0){
+            printf("%lld\
+",i-2);
+            }
+            else{
+            printf("%lld\
+",i-1);
+            }
+        }
+        else {
+            printf("%lld\
+",i);
+        }
+        }
+    }
+    return 0;
+}

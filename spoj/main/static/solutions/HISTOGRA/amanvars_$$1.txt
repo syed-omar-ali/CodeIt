@@ -1,0 +1,65 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+int main()
+{
+    long long int n,i,j,curr,right,left,maxArea=-1,marea;
+    sc(n);
+    long long int a[1000000];
+    while(n != 0)
+    {
+        maxArea = -1;
+        for(i=0; i<n; i++)
+        {
+            sc(a[i]);
+        }
+        /* for(i=0;i<n;i++)
+         {
+             printf("%lld",a[i]);
+         }*/
+        stack<long long int> s;
+        // s.push(0);
+        i=0;
+        while(i<n)
+        {
+            if(s.empty() || a[s.top()]<=a[i])
+            {
+                s.push(i++);
+            }
+            else
+            {
+                //curr = 0;
+
+                curr  = s.top();
+                s.pop();
+                if(s.empty())
+                    marea = a[curr]*(i);
+                else
+                    marea = a[curr]*(i-s.top()-1);
+                if(maxArea<marea)
+                {
+                    maxArea = marea;
+                }
+
+            }
+        }
+        while(!s.empty())
+        {
+            curr = s.top();
+            s.pop();
+            if(s.empty())
+                marea = a[curr]*(i);
+            else
+                marea = a[curr]*(i-s.top()-1);
+            if(maxArea<marea)
+            {
+                maxArea = marea;
+            }
+        }
+        printf("%lld\
+",maxArea);
+        sc(n);
+    }
+    return 0;
+}

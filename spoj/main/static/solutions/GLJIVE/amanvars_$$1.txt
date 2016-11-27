@@ -1,0 +1,34 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll n,i,j,k,sum=0,prev,mxp,mxa;
+    ll a[20];
+    for(i=0; i<10; i++)
+    {
+        sc(a[i]);
+    }
+    for(i=0; i<10; i++)
+    {
+        if(sum<=100)
+        {
+            prev = sum;
+            sum = sum + a[i];
+            //break;
+        }
+    }
+    mxp = 100 - prev;
+    mxa = sum-100;
+    if(mxp<mxa)
+    {
+        printf("%lld",prev);
+    }
+    else
+    {
+        printf("%lld",sum);
+    }
+    return 0;
+}

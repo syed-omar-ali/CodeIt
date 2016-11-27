@@ -1,0 +1,44 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,i,j,len,ite,flag=0;;
+    char num;
+    string exp;
+    vector<char> v;
+    sc(t);
+    for(j=1; j<=t; j++)
+    {
+        cin>>exp;
+        v.clear();
+        for(i=0; i<exp.length(); i++)
+        {
+            v.push_back(exp[i]);
+            len = v.size();
+            if(len>=3)
+            {
+                if(v[len-1]=='0' && v[len-2]=='0' && v[len-3]=='1'){
+                        v.erase(v.begin()+len-1);
+                        v.erase(v.begin()+len-2);
+                        v.erase(v.begin()+len-3);
+
+                }
+            }
+        }
+        if(v.size()==0)
+        {
+            cout<<"Case "<<j<<": yes"<<endl;
+
+        }
+        else
+        {
+            cout<<"Case "<<j<<": no"<<endl;
+        }
+
+    }
+    return 0;
+
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code here
+int i,j;
+int a[1000];
+for(i=0; ;i++)
+{
+    scanf("%d",&a[i]);
+    if(a[i] == 42)
+        break;
+}
+for(i=0;a[i] != 42 && a[i]<100 && a[i]>-100 ;i++){
+    printf("%d\
+",a[i]);
+}
+	return 0;
+}

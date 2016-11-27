@@ -1,0 +1,20 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,n,i,x,y,z,ans;
+    sc(t);
+    while(t--)
+    {
+        sc(n);
+        y = ((8*(n%11))%11)%11; // to find minimum no. , we add 11 and take mod with 11
+        ans = 11-y;  // subtract above remainder from 11 to find minimum no.
+        printf("%lld\
+",ans%11);
+
+    }
+    return 0;
+}

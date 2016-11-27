@@ -1,0 +1,25 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+ll gcd(ll a,ll b)
+{
+    return b==0?a: gcd(b,a%b);
+}
+int main()
+{
+    ll N,i,j,n,k,t;
+    sc(t);
+    for(ll case_no=1; case_no<=t; case_no++)
+    {
+        sc(n);
+        N = sqrt(n);
+        if(N*N ==n)
+            printf("Case %lld: Yes\
+",case_no);
+        else
+            printf("Case %lld: No\
+",case_no);
+    }
+}

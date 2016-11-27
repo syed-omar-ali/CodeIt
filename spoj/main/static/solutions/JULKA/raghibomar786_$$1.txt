@@ -1,0 +1,97 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+char *subs(char *arr1, char *arr2);
+int main(){
+    int z,lmain,rem,im,tempm;
+    char *total=(char*)malloc(sizeof(char)*1000000);
+    char *more=(char*)malloc(sizeof(char)*1000000);
+    char *jul=(char*)malloc(sizeof(char)*1000000);
+    char *nat=(char*)malloc(sizeof(char)*1000000);
+    char *totalp=(char*)malloc(sizeof(char)*1000000);;
+   for(z=0;z<10;z++){
+		scanf("%s%s",total,more);
+        strcpy(totalp,total);
+        nat=subs(total,more);
+        if(strcmp(nat,"0")==0)
+            strcpy(jul,totalp);
+        else{
+        lmain=strlen(nat);
+        rem=0;
+        for(im=0;im<lmain;im++){
+            tempm=nat[im]-'0';
+            nat[im]=((rem*10+tempm)/2)+'0';
+            rem=tempm%2;
+        }
+        while((*nat)=='0')
+            (nat)++;
+
+        jul=subs(totalp,nat);
+    while((*jul)=='0')
+        (jul)++;
+        }
+    printf("%s\
+",jul);
+    printf("%s\
+",nat);
+   }
+    return 0;
+}
+char *subs(char *arr1, char *arr2)
+{
+    int i,j,k,length,length1,length2,temp,temp1,temp2;
+    char *arr3=(char *)malloc (sizeof(char)*1000000);
+    if(strcmp(arr1,arr2)==0)
+    {
+        strcpy(arr3,"0");
+        return arr3;
+    }
+    length1=strlen(arr1);
+    length2=strlen(arr2);
+    length=(length1>length2?length1:length2);
+    k=length-1;
+    for(i=length1-1,j=length2-1;i>=0,j>=0;i--,j--)
+    {
+        temp=(arr1[i]-arr2[j]);
+        if(temp>=0)
+        {
+            arr3[k]=temp+'0';
+    //        printf("\
+%c",arr3[k]);
+            k--;
+        }
+        else
+        {
+            temp1=i-1,temp2=j-1;
+            while(arr1[temp1]=='0')
+            {
+                arr1[temp1]='9';
+                temp1--;
+            }
+            temp+=10;
+            arr1[temp1]-=1;
+            arr3[k]=temp+'0';
+      //      printf("\
+%c",arr3[k]);
+            k--;
+        }
+
+        if(j==0&&i!=0)
+        {
+            i--;
+            while(i>=0)
+            {
+                arr3[k]=arr1[i];
+        //        printf("\
+%c",arr3[k]);
+                i--;
+                k--;
+            }
+        }
+
+    }
+    arr3[length]='\\0';
+    return arr3;
+}
+

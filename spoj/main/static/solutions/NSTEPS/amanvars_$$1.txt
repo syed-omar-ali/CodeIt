@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main(){
+    int x,y,z[10000];
+    int n,i;
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf("%d%d",&x,&y);
+        if(x == y){
+            if(x%2 == 0)
+                printf("%d\
+",x+y);
+            else
+                printf("%d\
+",(x+y-1));
+        }
+        else if(x == y+2){
+            if(x%2 == 0)
+                printf("%d\
+",x+y);
+            else
+                printf("%d\
+",x+y-1);
+        }
+        else
+            printf("No Number\
+");
+        }
+    return 0;
+}

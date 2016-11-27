@@ -1,0 +1,81 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%d",&n)
+using namespace std;
+int getPrio(char e)
+{
+    if(e == '+' || e== '-')
+        return 1;
+    if(e == '*' || e== '/')
+        return 2;
+    if(e=='^')
+        return 3;
+    else
+        return -1;
+}
+int main()
+{
+    int n,i,j,t;
+    sc(t);
+    while(t--)
+    {
+        string e;
+        char exp;
+        stack<char> s;
+        queue<char> q;
+        vector<char> v;
+        cin>>e;
+        //q.push("(");
+        for(i=0;i<e.length();i++){
+           // cin>>exp;
+            q.push(e[i]);
+            //cin>>exp;
+
+        }
+
+        while(!q.empty())
+        {
+
+
+                exp = q.front();
+                q.pop();
+            if(exp=='+'||exp=='-'||exp=='*'||exp=='/'||exp=='('||exp==')'||exp=='^')
+            {
+                if(exp==')')
+                {
+                    while(!s.empty() && s.top()!='(' )
+                    {
+
+                        cout<<s.top();
+                        s.pop();
+
+                    }
+                    s.pop();
+                }
+                else if(exp == '('){
+                    s.push(exp);
+                }
+                else
+                {
+
+                        while(!s.empty()&& getPrio(exp)<=getPrio(s.top()))
+                        {
+                            cout<<s.top();
+                            s.pop();
+                        }
+                        s.push(exp);
+                }
+
+            }
+            else
+            {
+                cout<<exp;
+            }
+        }
+        printf("\
+");
+
+    }
+    return 0;
+}
+

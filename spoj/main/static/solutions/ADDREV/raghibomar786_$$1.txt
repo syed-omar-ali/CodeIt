@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int main()
+{
+    int i,j,N,temp,rem;
+    scanf("%d",&N);
+    for(j=0;j<N;j++)
+    {
+        int num[3]={0},rev[3]={0},sum=0;
+        scanf("%d%d",&num[0],&num[1]);
+        for(i=0;i<3;i++)
+        {
+            temp=num[i];
+            do
+            {
+                rem=temp%10;
+                rev[i]=rev[i]*10+rem;
+                temp/=10;
+
+            }while(temp!=0);
+
+            if(i==1)
+                num[2]=rev[0]+rev[1];
+        }
+        printf("%d\
+",rev[2]);
+    }
+
+
+    return 0;
+}

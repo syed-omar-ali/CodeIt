@@ -1,0 +1,47 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,i,j,num,x,y;
+    sc(t);
+    while(t--)
+    {
+        i=0;
+        vector<ll> v;
+        v.clear();
+        char op[1000],opr;
+        sc(num);
+        x=num;
+        do
+        {
+            scanf("%c",&opr);
+            switch(opr)
+            {
+            case '+':
+                sc(y);
+                x =x+y;
+                break;
+            case '-':
+                sc(y);
+                x=x-y;
+                break;
+            case '*':
+                sc(y);
+                x=x*y;
+                break;
+            case '/':
+                sc(y);
+                x=x/y;
+                break;
+            default:
+                break;
+            }
+        }while(opr!= '=');
+        printf("%lld\
+",x);
+    }
+    return 0;
+}

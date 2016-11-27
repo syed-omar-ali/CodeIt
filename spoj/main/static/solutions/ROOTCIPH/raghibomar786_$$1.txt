@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+int main(){
+    int i,T;
+    long long int a,b,c,dist;
+    scanf("%d",&T);
+    for(i=0;i<T;i++){
+        scanf("%lld%lld%lld",&a,&b,&c);
+        dist= a*a-2*b;
+        printf("%lld\
+",dist);
+    }
+
+    return 0;
+}

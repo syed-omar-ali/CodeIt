@@ -1,0 +1,29 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+ll gcd(ll a,ll b){
+    return b==0?a: gcd(b,a%b);
+}
+int main()
+{
+    ll t,a,b,i,j,N;
+    sc(t);
+    while(t--)
+    {
+        sc(a);
+        sc(b);
+        N = gcd(a,b);
+        ll ans=0;
+        ll sqt = (sqrt(N));
+        for(i=1;i<=sqt;i++){
+            if(N%i == 0)
+                ans+=2;
+            if(i*i == N)
+                ans--;
+        }
+        printf("%lld\
+",ans);
+    }
+}

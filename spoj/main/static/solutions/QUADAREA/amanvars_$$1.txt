@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int t,i,j;
+    double a,b,c,d,semi_peri,area,p,q,r,s;
+    scanf("%d",&t);
+    while(t--)
+        {
+            scanf("%lf%lf%lf%lf",&a,&b,&c,&d);
+            semi_peri=(a+b+c+d)/2;
+            p=semi_peri-a;
+            q=semi_peri-b;
+            r=semi_peri-c;
+            s=semi_peri-d;
+            area=sqrt(p*q*r*s);
+            printf("%.2lf\
+",area);
+        }
+        return 0;
+}

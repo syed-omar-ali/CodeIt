@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+long long int n,i;
+scanf("%lld",&n);
+    if(n%2 != 0)
+        printf("NIE");
+    else{
+            for(i=3;i*i<=n;i=i+2){
+                    if(n%i == 0){
+                        printf("NIE");
+                        i=n;
+                    }
+            }
+            if(i!=n+2)
+                printf("TAK");
+            }
+
+    return 0;
+}

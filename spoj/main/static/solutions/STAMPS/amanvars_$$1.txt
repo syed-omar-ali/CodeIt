@@ -1,0 +1,50 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,n,i,j,num,k,cnt=0;
+    sc(t);
+    for(i=1; i<=t; i++)
+    {
+        ll borrow,friends;
+        sc(borrow);
+        sc(friends);
+        vector<ll> frnd_list;
+        for(j=0; j<friends; j++)
+        {
+            sc(num);
+            frnd_list.push_back(num);
+        }
+        sort(frnd_list.begin(),frnd_list.end());
+        reverse(frnd_list.begin(),frnd_list.end());
+
+        ll sum =0;
+        cnt=0;
+        ll flag=0;
+        for(k=0; k<friends; k++)
+        {
+            sum=sum+frnd_list[k];
+            cnt++;
+            if(sum>=borrow)
+            {
+                flag=1;
+                break;
+            }
+        }
+
+        if(flag==1)
+            printf("Scenario #%lld:\
+%lld\
+",i,cnt);
+        else
+            printf("Scenario #%lld:\
+impossible\
+",i);
+
+
+    }
+    return 0;
+}

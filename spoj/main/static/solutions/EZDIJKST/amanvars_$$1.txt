@@ -1,0 +1,61 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,vertex,a,b,weight,i,j,edge,src,dest;
+    sc(t);
+    while(t--){
+    sc(vertex);
+    sc(edge);
+    vector<list<pair<ll,ll> > > alist(vertex+1);
+    for(i=0;i<edge;i++){
+        sc(a);
+        sc(b);
+        sc(weight);
+        alist[a].push_back(make_pair(b,weight));
+        //alist[b].push_back(make_pair(a,weight));
+    }
+    sc(src);
+    sc(dest);
+    list<ll> ipair(vertex + 1);
+    priority_queue<pair<ll,ll> , vector<pair<ll,ll> > , greater<pair<ll,ll> > > pq;
+    vector<ll> dist(vertex+1,99999);
+    vector<ll> parent(vertex+1,-1);
+    pq.push(make_pair(0,src));
+    dist[src]=0;
+
+    list<pair<ll,ll> > :: iterator itr;
+    while(!pq.empty())
+    {
+        ll u = pq.top().second;
+        pq.pop();
+
+        itr = alist[u].begin();
+        for(;itr != alist[u].end();itr++)
+        {
+            ll v = (*itr).first;
+            ll wt = (*itr).second;
+            if(dist[v]>dist[u]+wt)
+            {
+                dist[v] = dist[u] + wt;
+                parent[v] = u;
+                pq.push(make_pair(dist[v],v));
+            }
+
+        }
+    }
+    if(dist[dest] == 99999){
+        printf("NO\
+");
+    }
+    else{
+        printf("%lld\
+",dist[dest]);
+    }
+
+    }
+    return 0;
+}

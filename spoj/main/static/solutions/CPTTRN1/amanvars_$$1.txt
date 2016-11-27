@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main()
+{
+    int t,row,col,i,j;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d%d",&row,&col);
+        for(i=0;i<row;i++)
+        {
+            for(j=0;j<col;j++)
+            {
+                if((i+j)%2 == 0)
+                    printf("*");
+                else
+                    printf(".");
+
+            }
+            printf("\
+");
+        }
+    }
+}

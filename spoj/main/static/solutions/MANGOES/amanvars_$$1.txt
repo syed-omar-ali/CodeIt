@@ -1,0 +1,31 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,n,i,j,N,ans;
+    sc(t);
+    while(t--)
+    {
+        sc(n);
+        if(n&1!=0){
+            N=n;
+           ll odd = floor(n/2);
+            odd = odd%N;
+            ans = (odd)*(odd);
+            printf("%lld\
+",ans%N);
+        }
+        else{
+            N=n;
+            n = n-1;
+            ll odd = floor(n/2);
+             odd = odd%N;
+            ans = odd*odd;
+            printf("%lld\
+",ans%N);
+        }
+    }
+}

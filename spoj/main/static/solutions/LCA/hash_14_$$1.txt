@@ -1,0 +1,82 @@
+/*
+Baqir Khan
+Aligarh Muslim University
+III Year
+*/
+
+using namespace std;
+
+#include<bits/stdc++.h>
+#define rep(i,n) for(int i=0; i<(n); i++)
+#define mem(x,val) memset((x),(val),sizeof(x));
+#define vi vector<int>
+#define all(x) x.begin(),x.end()
+#define sz(x) ((int)x.size())
+#define pb push_back
+#define em(x) !x.empty()
+#define MAX 100000
+#define pii pair< int,int >
+
+typedef long long int ll;
+typedef unsigned long long ull;
+
+template<class T1> void deb(T1 e1) {
+    cout << e1 << endl;
+}
+
+template<class T1,class T2> void deb(T1 e1, T2 e2) {
+    cout << e1 << " " << e2 << endl;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    int t,f=1;
+    cin>>t;
+    while(t--) {
+        int n,m,temp;
+        cin>>n;
+        int p[n+1];
+        vector<int> v1;
+        vector<int> v2;
+        vector<int>::iterator it;
+        mem(p,0);
+        rep(i,n) {
+            cin>>m;
+            rep(j,m) {
+                cin>>temp;
+                p[temp] = i+1;
+            }
+        }
+        cin>>m;
+        cout<<"Case "<<f++<<":\
+";
+        while(m--) {
+            int a,b;
+            cin>>a>>b;
+            if(a==b) {
+                deb(a);
+                continue;
+            }
+            v1.push_back(a);
+            while(p[a]) {
+                v1.push_back(p[a]);
+                a=p[a];
+            }
+            v2.push_back(b);
+            while(p[b]) {
+                v2.push_back(p[b]);
+                b = p[b];
+            }
+            while(v1.back()==v2.back()) {
+                temp = v1.back();
+                v1.pop_back();
+                v2.pop_back();
+            }
+            deb(temp);
+            v1.clear();
+            v2.clear();
+        }
+    }
+    return 0;
+}

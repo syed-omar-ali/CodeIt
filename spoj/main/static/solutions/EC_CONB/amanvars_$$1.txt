@@ -1,0 +1,35 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,n,i,j,temp,rem,num,ans,cnt=0;
+    sc(t);
+    while(t--)
+    {
+        sc(num);
+        ll bin[1000];
+        temp = num;
+        i=0;
+        if(temp &1){
+            printf("%lld\
+",num);
+        }
+        else{
+        while(temp){
+            bin[i++] = temp%2;
+            temp = temp/2;
+        }
+        ans=0;
+        cnt=0;
+        for(j=i-1;j>=0;j--){
+            ans = ans + (bin[j]*pow(2,cnt++));
+        }
+        printf("%lld\
+",ans);
+        }
+    }
+
+}

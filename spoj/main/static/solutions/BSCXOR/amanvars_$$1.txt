@@ -1,0 +1,12 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+int main()
+{
+        long long int p,q,pl[10000] ,ql[10000] ,ans;
+        sc(p);sc(q);
+        printf("%lld",p^q);
+        return 0;
+
+}

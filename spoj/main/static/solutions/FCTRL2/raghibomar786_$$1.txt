@@ -1,0 +1,37 @@
+#include<stdio.h>
+
+int main()
+{
+    int t,n,i,j,k,index,product,carry;
+    int *arr= (int *)malloc(sizeof(int)*1000000);
+    scanf("%d",&t);
+    for(i=0;i<t;i++)
+    {
+        index=1,carry=0,product=0;
+        arr[0]=1;
+        scanf("%d",&n);
+        for(j=1;j<=n;j++)
+        {
+            for(k=0;k<index;k++)
+            {
+                product=arr[k]*j+carry;
+                arr[k]=product%10;
+                carry=product/10;
+            }
+            while(carry)
+            {
+                arr[index]=carry%10;
+                carry=carry/10;
+                index++;
+            }
+        }
+        for(j=(index-1);j>=0;j--)
+        {
+            printf("%d",arr[j]);
+        }
+        printf("\
+");
+    }
+
+    return 0;
+}

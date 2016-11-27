@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+    long long int N,div;
+    scanf("%lld",&N);
+    while(N>1){
+        div= N/2;
+        if(div*2==N){
+            N=N/2;
+        }
+        else{
+             printf("NIE");
+             exit(0);
+        }
+    }
+    printf("TAK");
+    return 0;
+}

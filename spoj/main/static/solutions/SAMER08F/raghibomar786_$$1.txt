@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+int main()
+{
+    int N,ans;
+    do
+    {
+        scanf("%d",&N);
+        ans= N*(N+1)*(2*N+1)/6;
+        if(N!=0)
+            printf("%d\
+",ans);
+    }while(N!=0);
+
+    return 0;
+}

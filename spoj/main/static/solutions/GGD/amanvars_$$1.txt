@@ -1,0 +1,42 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+ll gcd(ll a,ll b)
+{
+    while(b!=0)
+    {
+        ll rem = a%b;
+        a=b;
+        b=rem;
+    }
+    return a;
+}
+int main()
+{
+    ll t,n,i,j,mx=-9,cnt=0,x,y,z;
+    sc(t);
+    for(cnt=1; cnt<=t; cnt++)
+    {
+        sc(n);
+        if(n == 3)
+        {
+            printf("Case %lld: 2 3\
+",cnt,n-1,(n-1)/2);
+            continue;
+        }
+        if(n%2 == 0)
+        {
+            printf("Case %lld: %lld %lld\
+",cnt,n/2,n);
+        }
+        if(n&1)
+        {
+            printf("Case %lld: %lld %lld\
+",cnt,(n-1)/2,n-1);
+
+        }
+    }
+    return 0;
+}

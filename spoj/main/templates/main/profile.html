@@ -1,0 +1,74 @@
+{% extends "main/base.html" %}
+{% block title %}Profile | {{ user.first_name }}
+{% endblock %}
+{% block body %}
+{% include "main/nav.html" %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <div class="container" style="margin-top: 5%;">
+        <div class="col-lg-4 col-md-4" style="background: white; border-radius: 5px; padding: 20px;">
+               <h2><strong>{{ user.first_name }}</strong> {{ user.last_name }}</h2><br><h4> @{{ user.username }}</h4>
+                    <img src="{{ profile.img }}" class="img-responsive" style="border-radius: 5px;height: 200px; width: 200px;"/><br>
+                    <strong>School</strong>: {{ profile.school }}<br>
+                    <strong>City</strong>: {{ profile.city }}<br>
+                    <strong>Birth Year</strong>: {{ profile.birthyear }}<br><br>
+            {% if current %}
+                <br>
+                {% if unfollow %}
+                    <a href="{% url 'main:follow' profile.username 1 %}"> <button class="btn btn-primary btn-block"> Unfollow </button></a>
+                {% else %}
+                    <a href="{% url 'main:follow' profile.username 0 %}"> <button class="btn btn-primary btn-block"> Follow </button></a>
+                {% endif %}
+            {% endif %}
+            </div>
+            <div class="col-lg-4 col-lg-offset-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">People you may know</div><br>
+                    <div class="panel-body">
+                            {% for result in results %}
+                                <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <img src="{{ result.img }}" class="img-responsive" style="border-radius: 3px;height: 70px; width: 70px;"/>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                            <strong>{{result.username }}, </strong>
+                                {{result.city|title }}<br>
+                                {{result.school }}<br>
+                                <a href="{% url 'main:profile' result.username %}"> <button class="btn btn-info btn-sm">View Profile</button></a>
+                            </div>
+                                </div><br>
+                            {% endfor %}
+                    </div>
+                </div>
+            </div>
+    </div><br><br>
+
+    <div class="container">
+    <div class="row" style="background: white;margin: 20px; padding: 20px;">
+    <div class="col-lg-10 col-lg-offset-1">
+    <h3>The problems I have solved : </h3>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Problem</th>
+            <th>Time</th>
+            <th>Memory</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for l in list %}
+        <tr>
+            <td><a href="http://www.spoj.com/problems/{{ l.problem }}" target="_blank">{{ l.problem }}</a></td>
+            <td>{{ l.time }}</td>
+            <td>{{ l.memory }}</td>
+            <td>{{ l.date }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+
+{% endblock %}
+

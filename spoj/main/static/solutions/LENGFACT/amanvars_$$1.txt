@@ -1,0 +1,30 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll n,t,i,j,ans,x;
+    sc(t);
+    while(t--)
+    {
+        sc(n);
+        if(n<3)
+        {
+            printf("1\
+");
+        }
+        else
+        {
+            // Kamenetsky formula , after simplifying
+            // ceil(0.5(ln(2*pie) - 2*n + ln(n)(1 + 2*n))/ln(10))
+            // ceil(0.5(log10(2*pie*n)) + n*log10(n/e))
+            ans = ceill((log10(2*n*3.1415926535897932384626433832795))/2 + n*log10(n/2.7182818284590452353602874713527));
+            printf("%lld\
+",ans);
+        }
+
+    }
+    return 0;
+}

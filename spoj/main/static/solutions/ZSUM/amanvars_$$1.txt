@@ -1,0 +1,43 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+#define MOD 10000007
+using namespace std;
+typedef long long int ll;
+ll mod(ll base, ll exp)
+{
+    ll result = 1;
+    if(exp==1)
+        return base;
+    else
+    {
+        while(exp>0)
+        {
+            if(exp&1==1)
+                result = (result * base)%MOD;
+            base = (base*base)%MOD;   // to make base^2;
+            exp = exp>>1; //to make exp/2;
+        }
+        return result%MOD;
+    }
+}
+int main()
+{
+    ll t,n,k,i,j,sn=0,pn=0,zn1,zk1,zn2,zk2,zsum=0;
+    sc(n);
+    sc(k);
+    while(n!=0 && k!=0)
+    {
+        zn1 = mod(n,n);
+        zk1 = mod(n,k);
+        zn2 = (2*mod(n-1,n-1));
+        zk2 = (2*mod(n-1,k));
+        zsum = zn1 + zk1 + (zn2+zk2);
+
+        cout<<zsum%MOD<<endl;
+        sc(n);
+        sc(k);
+
+    }
+    return 0;
+}

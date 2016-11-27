@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+int main()
+{
+    long long int i,t,k,res;
+    scanf("%lld",&t);
+    for(i=0;i<t;i++)
+    {
+        scanf("%lld",&k);
+        res= (192+(k-1)*250);
+        printf("%lld\
+",res);
+    }
+    return 0;
+}

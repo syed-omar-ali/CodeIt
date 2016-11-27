@@ -1,0 +1,28 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll n,t,i,j,cases,k,x,y,z;
+    sc(cases);
+    while(cases--)
+    {
+        scanf("%lld %lld %lld", &x, &y, &z);
+        ll a,b,d,rt;
+		d = x*x + y*y + 2*y*z;
+		rt = (long long)sqrt((double)d);
+		if(rt * rt != d) printf("Not this time.\
+");
+		else {
+			a = 2*x*z + 2*z*rt;
+			b = 2*y + 4*z;
+			if(a % b) printf("Not this time.\
+");
+			else printf("%lld\
+", a / b);
+		}
+    }
+    return 0;
+}

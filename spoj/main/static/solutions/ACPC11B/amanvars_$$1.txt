@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long long int arr[100][100],arr1[1100],arr2[1100];
+    long long int i,j,t,n1,n2,max,min,minm;
+    scanf("%lld",&t);
+    while(t--)
+    {
+        scanf("%lld",&n1);
+        for(i=0;i<n1;i++)
+            scanf("%lld",&arr1[i]);
+        scanf("%lld",&n2);
+        for(i=0;i<n2;i++)
+            scanf("%lld",&arr2[i]);
+        if(n1>=n2){
+            minm = arr1[0]-arr2[0];
+            minm = abs(minm);
+        for(i=0;i<n1;i++)
+        {
+            for(j=0;j<n2;j++)
+            {
+                arr[i][j] =(arr1[i]-arr2[j]);
+                arr[i][j] = abs(arr[i][j]);
+                if(minm > arr[i][j])
+                    minm = arr[i][j];
+            }
+        }
+        }
+        else{
+            minm = arr1[0]-arr2[0];
+            minm = abs(minm);
+       for(i=0;i<n2;i++)
+        {
+            for(j=0;j<n1;j++)
+            {
+                arr[i][j] =(arr2[i]-arr1[j]);
+                arr[i][j] = abs(arr[i][j]);
+                if(minm > arr[i][j])
+                    minm = arr[i][j];
+            }
+        }
+        }
+        printf("%lld\
+",minm);
+    }
+    return 0;
+}

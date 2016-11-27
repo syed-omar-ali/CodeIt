@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+int main(){
+    long long int i,j,T,N,num,sum;
+    scanf("%lld",&T);
+    for(i=0;i<T;i++){
+        scanf("%lld",&N);
+        sum=0;
+        for(j=0;j<N;j++){
+            scanf("%lld",&num);
+            sum+=(num%N);
+        }
+        if(sum%N==0)
+            printf("YES\
+");
+        else
+            printf("NO\
+");
+    }
+}

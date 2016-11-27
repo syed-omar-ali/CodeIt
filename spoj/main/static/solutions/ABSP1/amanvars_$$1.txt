@@ -1,0 +1,31 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,n,num,i,j,sum=0,cnt=0;
+    vector<ll> v;
+    sc(t);
+    while(t--)
+    {
+        sc(n);
+        v.clear();
+        for(i=0;i<n;i++){
+            sc(num);
+            v.push_back(num);
+        }
+        //sort(v.begin(),v.end());
+        sum=0;
+        for(i=n-1;i>0;i--){
+            sum = sum + v[i]*(i);
+        }
+        cnt=0;
+        for(i=n-2;i>=0;i--){
+                cnt++;
+            sum =sum - v[i]*(cnt);
+        }
+        cout<<sum<<endl;
+    }
+}

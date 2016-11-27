@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Search Results{% endblock %}
+{% block body %}
+<div class="container">
+    <h3>Search results for "<strong>{{ search_id }}</strong>" are:</h3>
+    {% for problem in problems %}
+        <div class="container">
+        <div class="col-lg-2"></div>
+       <a href="{% url 'main:code' problem.name %}">
+            <div class="col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{ problem.name }}</div>
+                    <div class="panel-body">
+                        <h4>Best:</h4>
+                        <strong>Memory</strong>: {{ problem.memory }}<br>
+                        <strong>Time</strong>: {{ problem.time }}<br>
+                        <strong>User</strong>: {{ problem.user }}<br>
+                    </div>
+                </div>
+            </div>
+        </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

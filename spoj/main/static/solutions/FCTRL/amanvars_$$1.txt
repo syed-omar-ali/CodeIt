@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+    long long int t,n,i,j,p=1;
+    long long int get=1,sum=0,rem;
+    scanf("%lld",&t);
+    for(i=0;i<t;i++)
+    {
+        sum=0;get=5;
+        scanf("%lld",&n);
+        rem=n;
+        while(rem/get != 0)
+        {
+            rem=rem/get;
+            sum=sum+rem;
+        }
+        printf("%lld\
+",sum);
+    }
+    return 0;
+}

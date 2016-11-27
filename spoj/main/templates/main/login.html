@@ -1,0 +1,46 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Sign in{% endblock %}
+{% block style %}
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background: url("{% static 'main/images/bg.jpg'%}") no-repeat fixed center;
+        background-size: cover;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="container">
+<div class="col-lg-4 col-lg-offset-4" style="margin-top: 7%;opacity: 0.9">
+    {% if error_1 %}
+        <div class="alert alert-danger alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            Please enter correct <strong>SPOJ</strong> credentials
+        </div>
+    {% endif %}
+    {% if error_2 %}
+        <div class="alert alert-danger alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            You need to <strong>Login</strong> first
+        </div>
+    {% endif %}
+    <div class="panel panel-primary">
+            <div class="panel-heading">Enter <strong>SPOJ</strong> credentials</div>
+            <div class="panel-body">
+                <form method="post" action="">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.name }}">{{ field.label }}:</label>
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

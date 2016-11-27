@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int main(){
+    int x_cord,y_cord,sum;
+    long int i,N;
+    scanf("%ld",&N);
+    for(i=0;i<N;i++){
+        scanf("%d%d",&x_cord,&y_cord);
+        sum = x_cord+y_cord;
+        if(x_cord==y_cord){
+            if(x_cord%2==0)
+                printf("%d\
+",sum);
+            else
+                printf("%d\
+",(sum-1));
+        }
+        else if(y_cord==(x_cord-2)){
+            if(x_cord%2==0)
+                printf("%d\
+",sum);
+            else
+                printf("%d\
+",(sum-1));
+        }
+        else
+            printf("No Number\
+");
+    }
+
+    return 0;
+}

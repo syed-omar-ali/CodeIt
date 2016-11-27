@@ -1,0 +1,56 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll a,b,i,j,k,len;
+   // sc(a);
+    //sc(b);
+    while(1)
+    {
+        sc(a);
+        sc(b);
+        if(a==0 && b==0)
+            break;
+        ll cnt=0;
+        ll lena = ceil(log10(a));
+        ll lenb = ceil(log10(b));
+        if(lenb>lena){ //to check no of digits
+            ll temp = a;
+            a = b;
+            b = temp;
+        }
+        ll A[1000]={0},B[1000]={0};
+        i=0;j=0;
+        while(a>0){
+            A[i++] = a%10;
+            a=a/10;
+        }
+        while(b>0){
+            B[j++] = b%10;
+            b=b/10;
+        }
+
+        ll carry=0,sum;
+        for(k=0;k<i;k++){
+            sum = A[k]+B[k]+carry;
+            if(sum>=10){
+                cnt++;
+                //carry = sum/10;
+            }
+            carry = sum/10;
+        }
+        if(cnt==0)
+            printf("No carry operation.\
+");
+        else if(cnt==1)
+            printf("1 carry operation.\
+");
+        else
+            printf("%lld carry operations.\
+",cnt);
+        }
+        return 0;
+}

@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int main()
+{
+    int breadth,length,N,res=0;
+    scanf("%d",&N);
+    for(breadth=1;breadth<=N;breadth++)
+    {
+        for(length=breadth;length<=N;length++)
+        {
+            if(breadth*length<=N)
+                res++;
+        }
+    }
+    printf("%d",res);
+
+    return 0;
+}

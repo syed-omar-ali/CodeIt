@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}{{ search_id }}{% endblock %}
+{% block body %}
+<div class="container">
+    <h3>Code for "<strong>{{ search_id }}</strong>" are:</h3>
+    {% for file in files %}
+        {% if not file == "data.txt" %}
+        <div class="container" style="background: white; border-radius: 5px;">
+        <div class="col-lg-2"></div>
+        <a href="{% static 'solutions/'|add:search_id|add:file %}">
+            {{ file }}
+        </a>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

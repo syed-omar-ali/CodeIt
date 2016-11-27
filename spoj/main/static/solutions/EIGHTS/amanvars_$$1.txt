@@ -1,0 +1,19 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,n,k,ans;
+    sc(t);
+    while(t--){
+        sc(n);
+        /**
+        first no whose cube ends with 888 is 192 and afterwards there is a gap of 250 in each nth no.
+        **/
+        ans = 192 + ((n-1)*250);
+        printf("%lld\
+",ans);
+    }
+}

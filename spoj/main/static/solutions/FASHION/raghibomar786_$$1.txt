@@ -1,0 +1,42 @@
+#include<stdio.h>
+
+int main()
+{
+    long int i,t;
+    int N,j,res;
+    int men[1050],women[1050];
+    scanf("%ld",&t);
+    for(i=0;i<t;i++)
+    {
+        res=0;
+        scanf("%d",&N);
+        for(j=0;j<N;j++)
+            scanf("%d",&men[j]);
+        for(j=0;j<N;j++)
+            scanf("%d",&women[j]);
+        sort(&men,N);
+        sort(&women,N);
+        for(j=0;j<N;j++)
+            res+=(men[j]*women[j]);
+        printf("%d\
+",res);
+    }
+    return 0;
+}
+
+void sort(int *x,int y)
+{
+    int l,k,temp;
+    for(l=0;l<(y-1);l++)
+    {
+        for(k=(l+1);k<y;k++)
+        {
+            if(x[l]<x[k])
+            {
+                temp=x[l];
+                x[l]=x[k];
+                x[k]=temp;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[1000],strf[200][20];
+    int i=0,j=0,k=0,cnt=0,m=0,col,len;
+    int row,num=1,check;
+
+    while(1){
+        scanf("%d",&col);
+    if(col == 0)
+        return 0;
+    else{
+    scanf(" %[^\
+]s",str);
+    k=0;
+    row=(strlen(str))/col;
+          for(i=0;i<row;i++){
+            if(i%2==0)
+            {
+                for(j=0;j<col;j++)
+                {
+                    strf[i][j]=str[k++];
+                }
+            }
+            else
+            {
+                for(j=col-1;j>=0;j--)
+                {
+                    strf[i][j]=str[k++];
+                }
+            }
+          }
+          for(i=0;i<col;i++){
+          for(j=0;j<row;j++){
+            printf("%c",strf[j][i]);
+          }
+          }
+          printf("\
+");
+    }
+
+    }
+    return 0;
+}

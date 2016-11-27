@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+    int t,i,j;
+    long long int a3,al3,d,sum,n;
+    scanf("%d",&t);
+    for(i=0;i<t;i++){
+        scanf("%lld%lld%lld",&a3,&al3,&sum);
+        n=(2*sum)/(a3+al3);
+        d=(al3-a3)/(n-5);
+        printf("%lld\
+",n);
+        for(j=1;j<=n;j++){
+            printf("%lld ",a3-2*d+(j-1)*d);
+        }
+        printf("\
+");
+    }
+    return 0;
+}

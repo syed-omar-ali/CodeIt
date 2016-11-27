@@ -1,0 +1,54 @@
+/*
+Baqir Khan
+Aligarh Muslim University
+III Year
+*/
+
+using namespace std;
+
+#include<bits/stdc++.h>
+#define rep(i,n) for(int i=0; i<(n); i++)
+#define mem(x,val) memset((x),(val),sizeof(x));
+#define vi vector<int>
+#define all(x) x.begin(),x.end()
+#define sz(x) ((int)x.size())
+#define pb push_back
+#define em(x) !x.empty()
+#define MOD 1000000007
+#define pii pair<int,int>
+#define fc first
+#define sc second
+#define t() int t,f=1; cin>>t; while(t--)
+
+typedef long long int ll;
+typedef unsigned long long ull;
+
+template<class T1> void deb(T1 e1) {
+    cout << e1 << endl;
+}
+
+template<class T1,class T2> void deb(T1 e1, T2 e2) {
+    cout << e1 << " " << e2 << endl;
+}
+
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    t() {
+        int n,k;
+        cin>>n;
+        if(n==3) {
+            printf("Case %d: 2 3\
+",f++);
+            continue;
+        }
+        if(n&1)
+            k=n-1;
+        else
+            k=n;
+        printf("Case %d: %d %d\
+",f++,k/2,k);
+    }
+    return 0;
+}

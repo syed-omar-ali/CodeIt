@@ -1,0 +1,27 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll a,b,c,d,e,w,i;
+    scanf("%lld%lld%lld%lld%lld%lld",&a,&b,&c,&d,&e,&w);
+
+    ll sum=0,fg=0;
+    ll cnt =15;
+    cnt = cnt+a+b+c+d+e;
+    for(i=0; i<cnt; i++)
+    {
+        sum+=2;
+        if(sum==w){
+            fg=1;
+            break;
+        }
+    }
+    if(fg==1 ||sum==w)
+        printf("YES");
+    else
+        printf("NO");
+    return 0;
+}

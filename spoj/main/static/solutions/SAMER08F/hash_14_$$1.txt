@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void) {
+	int n, i, count;
+	while(1){
+		count=0;
+		scanf("%d", &n);
+		if(n==0)break;
+		for(i=1;i<=n;i++){
+			count+=i*i;
+		}
+		printf("%d\
+", count);
+	}
+	return 0;
+}

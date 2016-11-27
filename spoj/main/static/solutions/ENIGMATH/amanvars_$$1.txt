@@ -1,0 +1,29 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+int main()
+{
+    long long int t,a,b,x,y,dividend,divisor,remainder,gcd;
+    sc(t);
+    while(t--)
+    {
+        sc(a);
+        sc(b);
+        dividend =a;
+        divisor=b;
+        //to find GCD
+        while(divisor!=0){
+            remainder= dividend % divisor;
+            dividend=divisor;
+            divisor=remainder;
+        }
+        gcd = dividend;
+        x = b/gcd;
+        y = a/gcd;
+        printf("%lld %lld\
+\
+",x,y);
+    }
+    return 0;
+}

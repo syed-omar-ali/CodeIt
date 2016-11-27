@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include<math.h>
+
+int main(){
+
+    int i,j,n,k,x;
+    long int cases=0;
+    int coeff[1050];
+    long long int res,temp;
+    do{
+        scanf("%d",&n);
+        if(n!=(-1)){
+            cases++;
+            for(i=n;i>=0;i--){
+                scanf("%d",&coeff[i]);
+            }
+            scanf("%d",&k);
+            printf("Case %ld:\
+",cases);
+            for(i=0;i<k;i++){
+                scanf("%d",&x);
+                res=coeff[0];
+                temp=1;
+                for(j=1;j<=n;j++){
+                    temp*=x;
+                    res+=(temp*coeff[j]);
+
+                }
+                printf("%lld\
+",res);
+            }
+        }
+    }while(n!=(-1));
+
+    return 0;
+}

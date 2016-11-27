@@ -1,0 +1,58 @@
+#include<stdio.h>
+
+int main()
+{
+    int i,j,T;
+    long int candies,temp,res;
+    scanf("%d",&T);
+    for(i=1;i<=T;i++)
+    {
+        scanf("%ld",&candies);
+        if(candies<8)
+        {
+            res=-1;
+        }
+        else
+        {
+            res=-1;
+            temp=(candies%3);
+            if(temp==0)
+            {
+                candies-=5;
+                for(j=0;j<2;j++)
+                {
+                    candies-=5;
+                    if(candies%3==0)
+                    {
+                        if(candies<=0){
+                            res=-1;
+                            break;
+                        }
+                        res=candies;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                for(j=0;j<2;j++)
+                {
+                    candies-=5;
+                    if(candies%3==0)
+                    {
+                        if(candies<=0){
+                            res=-1;
+                            break;
+                        }
+                        res=candies;
+                        break;
+                    }
+                }
+            }
+        }
+
+        printf("Case %d: %ld\
+\
+",i,res);
+    }
+}

@@ -1,0 +1,52 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%u",&n)
+using namespace std;
+int main()
+{
+   unsigned int t,low,up,i,j,cnt=0,p,s,flag = 0,temp;
+    sc(t);
+    while(t--)
+    {
+        sc(low);
+        sc(up);
+        int prime_list[32005];
+        if(low==1)
+            low++;
+        cnt=0;
+        //Simple Sieve of Eratosthenes//
+        for(i=2; i<32000; i++)
+        {
+            flag = 1;
+            temp = sqrt(i);
+            for(j=2;j<=temp;j++){
+                if(i%j==0){
+                    flag = 0;
+                    break;
+                }
+            }
+            if(flag == 1)
+                prime_list[cnt++]=i;
+        }
+
+        //to find prime in given range(low,up)
+        while(low<=up){
+            int flag=1;
+            temp = sqrt(low);
+            for(j=0;prime_list[j]<=temp;j++){
+                if(low%prime_list[j]==0){
+                    flag=0;
+                    break;
+                }
+            }
+            if(flag==1)
+                printf("%u\
+",low);
+            low++;
+
+        }
+        printf("\
+");
+    }
+    return 0;
+}

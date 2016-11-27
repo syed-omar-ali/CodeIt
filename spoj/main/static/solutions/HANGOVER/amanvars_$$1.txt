@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+    double n,cnt=2,check=0,frac=0;
+    int card=0;
+
+    while(1)
+    {
+        scanf("%lf",&n);
+        if(n==0.00)
+            return 0;
+        else
+        {
+            cnt=2;check=0;card=0;
+            while(check <= n)
+            {
+             frac=1/cnt;
+            check=check+frac;
+            cnt++;
+            card++;
+            }
+            printf("%d card(s)\
+",card);
+        }
+    }
+    return 0;
+}

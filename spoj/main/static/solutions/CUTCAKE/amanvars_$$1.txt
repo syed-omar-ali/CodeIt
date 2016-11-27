@@ -1,0 +1,21 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll t,n,ans,cut;
+    sc(t);
+    while(t--)
+    {
+        sc(n);
+                cut =0;
+        while((cut+1)*cut/2 + 1 < n){ // formula for getting pieces when we cut any cakes by minimum cuts
+            cut++;
+        }
+        printf("%lld\
+",cut);
+    }
+    return 0;
+}

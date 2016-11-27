@@ -1,0 +1,18 @@
+/* Aman Varshney , ZHCET, AMU Computer Engineering */
+#include<bits/stdc++.h>
+#define sc(n) scanf("%lld",&n)
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll n,t,i,j,num_form,num_one;
+    sc(t);
+    while(t--){
+        sc(n);
+        num_form = pow(2,n-1);
+        num_one = num_form + (n-1)*(num_form/2);
+        printf("%lld %lld\
+",num_form,num_one);
+    }
+    return 0;
+}

@@ -1,0 +1,16 @@
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int i=0;
+		Scanner sc = new Scanner(System.in);
+		i = sc.nextInt();
+		while(i!=42){
+			System.out.println(i);
+			i = sc.nextInt();
+		}
+	}
+}
